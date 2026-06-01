@@ -1,0 +1,17 @@
+name: scale-test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        worker: [1,2,3,4,5]
+
+    steps:
+      - run: |
+          echo "worker ${{ matrix.worker }}"
+          sleep 60
