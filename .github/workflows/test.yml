@@ -1,0 +1,10 @@
+name: arc-poc
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: test
+        run: echo "ARC WORKING"
