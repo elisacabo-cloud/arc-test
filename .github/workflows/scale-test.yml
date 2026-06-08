@@ -5,13 +5,14 @@ on:
 
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: arc-runner-set
 
     strategy:
       matrix:
         worker: [1,2,3,4,5]
 
     steps:
-      - run: |
+      - name: Test workload
+        run: |
           echo "worker ${{ matrix.worker }}"
           sleep 60
